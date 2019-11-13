@@ -71,7 +71,7 @@ def indic_loop(indics):
 def get_quandl(zipcode):
     indics = ['ZHVIAH', 'ZHVIBT', 'ZHVIMT', 'ZHVITT', "MVALFAH"]
     base_url = 'https://www.quandl.com/api/v3/datasets/ZILLOW/'
-    api_key = 'DFQTn_jyXtRoxLZra1wY'
+    api_key = 
     zip_code_data = {}
     for indic in indics:
         q_code = 'Z' + zipcode + '_' + indic

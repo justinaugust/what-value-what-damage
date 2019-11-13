@@ -10,7 +10,7 @@ _Dylan Bailey, Albert Wong, Justin August_, General Assembly Data Science Immers
 4. [FLASK Implimentation](#flask-implementation)
 4. [Known Issues](#known-issues)
 5. [Future Features](#future-features)
-6. [Media Links](#media-links)
+6. [Media Links & Demonstrations](#media-links)
 
 
 ## Problem statement
@@ -105,7 +105,7 @@ Flask allow us to run our scripts and integrate it into html templates we create
 
 
 ## Media Links
-- [Demonstration Maps](map_demo.ipynb)
+- [Demonstration Maps](https://nbviewer.jupyter.org/github/justinaugust/what-value-what-damage/blob/master/map_demo.ipynb)
 - [Watch a Video of the App in Action!](media/app_demo.mp4)
 - Presentation
 	- [Video](media/presentation.mp4)

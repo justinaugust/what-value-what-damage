@@ -105,4 +105,6 @@ Flask allow us to run our scripts and integrate it into html templates we create
 
 
 ## Media Links
-[Presentation Here](https://docs.google.com/presentation/d/1RO0ZZt118jAWgInrZFqbA0gMPzDycVqmgpj8uQTybpY/edit#slide=id.p)
+- [Demonstration Maps](map_demo.ipynb)
+- [Watch a Video of the App in Action!](media/app_demo.mp4)
+- Presentation: [PDF](media/Damage Estimate by Zipcode.pdf) [Slides](https://docs.google.com/presentation/d/1RO0ZZt118jAWgInrZFqbA0gMPzDycVqmgpj8uQTybpY/edit#slide=id.p)

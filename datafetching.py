@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[2]:
 
 
 import pandas as pd
@@ -22,23 +22,14 @@ from uszipcode import SearchEngine
 search = SearchEngine(simple_zipcode=False)
 
 
-# In[9]:
-
-
-with open ("quandl.key", "r") as myfile:
-    quandl_key=myfile.read().strip('\n')
-
-
-# ## Fetching Functions
-
-# In[5]:
+# In[3]:
 
 
 def place_value(number): 
     return ("{:,}".format(number)) 
 
 
-# In[6]:
+# In[4]:
 
 
 def wkb_hexer(line):
@@ -46,7 +37,7 @@ def wkb_hexer(line):
     # https://stackoverflow.com/a/38363154
 
 
-# In[7]:
+# In[5]:
 
 
 def indic_loop(indics):
@@ -61,13 +52,13 @@ def indic_loop(indics):
         zip_code_data[indic] = res.json()
 
 
-# In[8]:
+# In[6]:
 
 
 def get_quandl(zipcode):
     indics = ['ZHVIAH', 'ZHVIBT', 'ZHVIMT', 'ZHVITT', "MVALFAH"]
     base_url = 'https://www.quandl.com/api/v3/datasets/ZILLOW/'
-    api_key = quandl_key
+    api_key = 'DFQTn_jyXtRoxLZra1wY'
     zip_code_data = {}
     for indic in indics:
         q_code = 'Z' + zipcode + '_' + indic
@@ -87,7 +78,7 @@ def get_quandl(zipcode):
     return(zip_code_data)
 
 
-# In[9]:
+# In[7]:
 
 
 def hurricane_damage(zipcode, disaster_level):
@@ -468,28 +459,37 @@ def process_zips(zip_codes):
     return(zip_codes)
 
 
-# In[20]:
+# host = "localhost"
+# dbname = "zip_codes"
+# user = 
+# port =  
+# table_name = 'shapes'
+# have_shapes = have_geojson()
+# 
+# engine = sal.create_engine(f'postgresql://{user}@{host}:{port}/{dbname}')
+# # filling the empty table with data!
+# def shapes_to_sql():
+#     for zipc in have_shapes:
+#     #     try:
+#         df = gpd.read_file(f"datasets/zips/shapefiles/{zipc}.geojson")
+#         df['geometry'] = df['geometry'].map(wkb_hexer)
+#         with engine.connect() as conn, conn.begin():
+#             df.to_sql(table_name,
+#                      con = conn,
+#                      if_exists = 'append',
+#                      index = False)
+#     #     except:
+#     #         print(f'{zipc} not in SQL')
+
+# In[21]:
 
 
-host = "localhost"
-dbname = "zip_codes"
-user = "justinaugust"
-port =  5432
-table_name = 'shapes'
-have_shapes = have_geojson()
-
-engine = sal.create_engine(f'postgresql://{user}@{host}:{port}/{dbname}')
-# filling the empty table with data!
-def shapes_to_sql():
-    for zipc in have_shapes:
-    #     try:
-        df = gpd.read_file(f"datasets/zips/shapefiles/{zipc}.geojson")
-        df['geometry'] = df['geometry'].map(wkb_hexer)
-        with engine.connect() as conn, conn.begin():
-            df.to_sql(table_name,
-                     con = conn,
-                     if_exists = 'append',
-                     index = False)
-    #     except:
-    #         print(f'{zipc} not in SQL')
+# with engine.connect() as conn, conn.begin():
+#     # Convert the `'geom'` column back to Geometry datatype, from text
+#     sql = sal.sql.text("""ALTER TABLE schema_name.shapes
+#                ALTER COLUMN geometry TYPE Geometry(LINESTRING, <SRID>)
+#                  USING ST_SetSRID(geometry::Geometry, <SRID>)""")
+#     run_sql = conn.execute(sql)
+#     conn.execute("commit")
+        
 

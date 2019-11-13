@@ -15,10 +15,6 @@ from datafetching import *
 from map_it import *
 from IPython.display import display, HTML
 
-
-from flask import Flask, request
-import folium
-
 # create app
 app = Flask(__name__)
 

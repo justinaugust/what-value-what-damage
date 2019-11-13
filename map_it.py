@@ -1,19 +1,18 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[23]:
+# In[4]:
 
 
 import pandas as pd
 import numpy as np
 
-from uszipcode import SearchEngine
+from uszipcode import *
 
 import geopandas as gpd
 import folium
 
 import json
-#!pip install json2table
 from json2table import convert
 from IPython.display import display, HTML
 
@@ -23,7 +22,7 @@ from shapely.geometry import mapping
 from datafetching import *
 
 
-# In[24]:
+# In[5]:
 
 
 def make_map(geo_json, df):
@@ -36,10 +35,7 @@ def make_map(geo_json, df):
                control_scale = True,
                prefer_canvas = True,
                    max_bounds=True,
-                   zoom_snap = .5,
-                  tiles = 'OpenStreetMap',
-
-                   
+                   zoom_snap = .5,                  
               )
     
 #     population_bins = list(df['population_density'].quantile([0, 0.25, 0.5, 0.75, 1]))
@@ -264,7 +260,7 @@ def make_map(geo_json, df):
     return(m)
 
 
-# In[1]:
+# In[6]:
 
 
 def make_df(zip_codes, geo):
@@ -289,7 +285,7 @@ def make_df(zip_codes, geo):
     return(df)
 
 
-# In[34]:
+# In[7]:
 
 
 def mapit(zip_codes):
@@ -301,7 +297,7 @@ def mapit(zip_codes):
     return(folium_map)
 
 
-# In[17]:
+# In[8]:
 
 
 def tableit(zip_codes):
@@ -398,10 +394,4 @@ def tableit(zip_codes):
             html_list.append(html)
         html_dict[zipcode] = html_list
     return(html_dict)
-
-
-# In[ ]:
-
-
-
 

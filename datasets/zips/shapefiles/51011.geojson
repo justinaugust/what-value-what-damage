@@ -1,0 +1,7 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "zip": "51011" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -96.519278, 42.923493999059126 ], [ -96.509474, 42.923528999059123 ], [ -96.509695, 42.909035999059171 ], [ -96.519373, 42.909130999059158 ], [ -96.519278, 42.923493999059126 ] ] ] } }
+]
+}

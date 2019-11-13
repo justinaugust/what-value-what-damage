@@ -1,0 +1,7 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "zip": "67478" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -97.948257, 39.393351999074468 ], [ -97.929507, 39.393542999074469 ], [ -97.929374, 39.37884199907456 ], [ -97.948066, 39.378648999074557 ], [ -97.948257, 39.393351999074468 ] ] ] } }
+]
+}

@@ -1,0 +1,328 @@
+<!--
+Credit to https://pythonhow.com/add-css-to-flask-website/
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flask app</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main2.css') }}">
+  </head>
+  <style>
+  
+  </style>
+  <body>
+    <!--
+      Credit to for the tabs: https://www.w3schools.com/howto/howto_js_full_page_tabs.asp
+
+
+    -->
+    <script>
+      function openPage(pageName, elmnt, color) {
+  
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+
+        // Remove the background color of all tablinks/buttons
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].style.backgroundColor = "";
+        }
+
+        // Show the specific tab content
+        document.getElementById(pageName).style.display = "block";
+
+        // Add the specific color to the button used to open the tab content
+        elmnt.style.backgroundColor = color;
+        }
+
+        function openZip(pageName, elmnt, color) {
+        // Hide all elements with class="tabcontent" by default */
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent2");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+
+        // Remove the background color of all tablinks/buttons
+        tablinks = document.getElementsByClassName("tablink2");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].style.backgroundColor = "";
+        }
+
+        // Show the specific tab content
+        document.getElementById(pageName).style.display = "block";
+
+        // Add the specific color to the button used to open the tab content
+        elmnt.style.backgroundColor = color;
+      }
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+      
+   
+
+    </script>
+    <h1 class="logo">Home Properties Value Estimation</h1>
+      
+      
+     </div>
+     <div width="100%" height="100%">
+
+        
+    </div>
+     <div class = "searchbar">
+        
+        
+         <form method="post">
+            <h2>Enter a list of zip codes to estimate pre-damage statistics for</h2>
+             <input type="text" name="zip_codes" />
+             
+             <input type="submit" value="Map It!" />
+         </form>
+         <br>
+
+         <form method="post">
+            <input type="hidden" value="94175,
+            94160,
+            94164,
+            94131,
+            94114,
+            94156,
+            94142,
+            94107,
+            94118,
+            94103,
+            94162,
+            94139,
+            94145,
+            94128,
+            94136,
+            94151,
+            94121,
+            94163,
+            94127,
+            94120,
+            94129,
+            94170,
+            94171,
+            94147,
+            94134,
+            94123,
+            94119,
+            94116,
+            94177,
+            94130,
+            94135,
+            94133,
+            94108,
+            94143,
+            94154,
+            94137,
+            94132,
+            94124,
+            94117,
+            94172,
+            94104,
+            94150,
+            94112,
+            94159,
+            94167,
+            94125,
+            94146,
+            94165,
+            94155,
+            94166,
+            94126,
+            94101,
+            94102,
+            94122,
+            94141,
+            94110,
+            94138,
+            94169,
+            94153,
+            94144,
+            94140,
+            94152,
+            94109,
+            94157,
+            94106,
+            94111,
+            94115,
+            94168,
+            94188,
+            94105,
+            94161" name="zip_codes">
+            <input type="submit" value="San Francisco" />
+         </form>
+
+         <form method="post">
+            
+             <input type="hidden" value="77000,
+             77001,
+             77002,
+             77003,
+             77004,
+             77005,
+             77006,
+             77007,
+             77008,
+             77009,
+             77010,
+             77011,
+             77012,
+             77013,
+             77014,
+             77015,
+             77016,
+             77017,
+             77018,
+             77019,
+             77020,
+             77021,
+             77022,
+             77023,
+             77024,
+             77025,
+             77026,
+             77027,
+             77028,
+             77029,
+             77030,
+             77031,
+             77032,
+             77033,
+             77034,
+             77035,
+             77036,
+             77037,
+             77038,
+             77039,
+             77040" name="zip_codes" />
+
+            <input type="submit" value="Hurricane Harvey" />
+         </form>
+
+         <form method="post">
+          <input type="hidden" value="73141,
+          73170,
+          73113,
+          73147,
+          73153,
+          73146,
+          73136,
+          73160,
+          73189,
+          73169,
+          73194,
+          73149,
+          73134,
+          73125,
+          73199,
+          73193,
+          73132,
+          73143,
+          73105,
+          73157,
+          73130,
+          73118,
+          73152,
+          73165,
+          73145,
+          73156,
+          73140,
+          73139,
+          73116,
+          73114,
+          73159,
+          73142,
+          73148,
+          73131,
+          73119,
+          73102,
+          73110,
+          73108,
+          73104,
+          73154,
+          73172,
+          73173,
+          73184,
+          73106,
+          73109,
+          73162,
+          73198,
+          73178,
+          73151,
+          73144,
+          73112,
+          73185,
+          73128,
+          73101,
+          73111,
+          73123,
+          73155,
+          73177,
+          73135,
+          73190,
+          73120,
+          73196,
+          73129,
+          73126,
+          73107,
+          73197,
+          73103,
+          73124,
+          73115,
+          73150,
+          73121,
+          73164,
+          73163,
+          73117,
+          73180,
+          73167,
+          73122,
+          73127,
+          73179,
+          73137" 
+          name="zip_codes">
+          <input type="submit" value="OKC Tornado" />
+       </form>
+
+
+       </form>
+         
+     </div>
+ 
+ 
+     
+     <!--
+     credit for |safe https://stackoverflow.com/a/3206446   
+     -->
+     
+        <div class="new_map">
+          
+            {{ map|safe }}
+        </div>
+        <div class="table">
+
+        <div class="tab2">{{ ziptabs|safe}}</div>
+ 
+  
+          
+
+        
+         {{ html|safe }}
+
+        </div>
+     
+    
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>

@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import pandas as pd
 import numpy as np
 
@@ -22,9 +16,8 @@ from map_it import *
 from IPython.display import display, HTML
 
 
-# In[ ]:
-
-
+from flask import Flask, request
+import folium
 
 # create app
 app = Flask(__name__)
@@ -74,10 +67,3 @@ def index():
 # run app
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-# In[ ]:
-
-
-
-

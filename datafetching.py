@@ -1,12 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# #!pip install zipcodes
-# #!pip install xmltodict
-# #!pip install geopandas
-# #!pip install uszipcode
-
-# In[4]:
+# In[1]:
 
 
 import pandas as pd
@@ -27,13 +22,14 @@ from uszipcode import SearchEngine
 search = SearchEngine(simple_zipcode=False)
 
 
-# ## Fetching Functions:
-# 
-# - `get_addresses` looks up addresses from the [OpenAddresses.io](https://openaddresses.io) database based on the zip code someone wants to check
-# - `fetch_data_zillow` takes those addresses and gets the XML for each address it can find data for
-# - `get_zests` filters that data for the `zestimate` for each address
-# - `make_df` takes those values and calculates min(), mean(), max(), etc and creates a PANDAS DataFranme
-# - `df_to_csv` updates our existing database with new values, drops the old values if the zip code is repeated and rewrites the csv, outputting the new database as `df`, a PANDAS dataframe
+# In[9]:
+
+
+with open ("quandl.key", "r") as myfile:
+    quandl_key=myfile.read().strip('\n')
+
+
+# ## Fetching Functions
 
 # In[5]:
 
@@ -71,7 +67,7 @@ def indic_loop(indics):
 def get_quandl(zipcode):
     indics = ['ZHVIAH', 'ZHVIBT', 'ZHVIMT', 'ZHVITT', "MVALFAH"]
     base_url = 'https://www.quandl.com/api/v3/datasets/ZILLOW/'
-    api_key = 
+    api_key = quandl_key
     zip_code_data = {}
     for indic in indics:
         q_code = 'Z' + zipcode + '_' + indic
@@ -496,23 +492,4 @@ def shapes_to_sql():
                      index = False)
     #     except:
     #         print(f'{zipc} not in SQL')
-
-
-# In[21]:
-
-
-# with engine.connect() as conn, conn.begin():
-#     # Convert the `'geom'` column back to Geometry datatype, from text
-#     sql = sal.sql.text("""ALTER TABLE schema_name.shapes
-#                ALTER COLUMN geometry TYPE Geometry(LINESTRING, <SRID>)
-#                  USING ST_SetSRID(geometry::Geometry, <SRID>)""")
-#     run_sql = conn.execute(sql)
-#     conn.execute("commit")
-        
-
-
-# In[ ]:
-
-
-
 

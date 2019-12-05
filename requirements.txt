@@ -9,3 +9,4 @@ Flask==1.1.1
 uszipcode==0.2.4
 requests==2.22.0
 ipython==7.10.1
+gunicorn==20.0.4
